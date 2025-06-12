@@ -10,7 +10,7 @@ Sebuah aplikasi untuk deteksi stress yang dapat membantu individu mengenali stre
 
 [Backend](https://github.com/capstone-project-analisis-sentiment/deteksi-stress-dengan-analisis-chat-dan-sentiment/tree/main/Backend)
 
-[Machine Learning](https://)
+[Machine Learning](https://github.com/capstone-project-analisis-sentiment/deteksi-stress-dengan-analisis-chat-dan-sentiment/tree/main/Machine-Learning)
 
 
 ## Penggunaan
