@@ -5,7 +5,7 @@
 # Stress Chat Detector
 Sebuah aplikasi untuk deteksi stress yang dapat membantu individu mengenali stress berdasarkan analisis chat.
 
-## Documentation
+## Dokumentasi
 [Frontend](https://github.com/capstone-project-analisis-sentiment/deteksi-stress-dengan-analisis-chat-dan-sentiment/tree/main/Frontend)
 
 [Backend](https://github.com/capstone-project-analisis-sentiment/deteksi-stress-dengan-analisis-chat-dan-sentiment/tree/main/Backend)
@@ -14,22 +14,22 @@ Sebuah aplikasi untuk deteksi stress yang dapat membantu individu mengenali stre
 
 
 ## Penggunaan
-anda akan melihat tampilan utama setelah buka web analisis stress<br>
+- anda akan melihat tampilan utama setelah buka web analisis stress<br>
 ![Landing Page](/img/utama.png)
 
-setelah tampil halaman utama selanjutnya klik menu detector untuk analisis tingkat stress <br>
+- setelah tampil halaman utama selanjutnya klik menu detector untuk analisis tingkat stress <br>
 ![Login Page](/img/detector.png)
 
-selanjutnya silakan upload screenshot yang ingin di prediksi lalu tekan analisis tingkat stress<br>
+- selanjutnya silakan upload screenshot yang ingin di prediksi lalu tekan analisis tingkat stress<br>
 ![Analisis Now!](/img/prediksi.png)
 
-Dan ini hasil analisisnya <br>
+- Dan ini hasil analisisnya <br>
 ![Result](img/hasil.png)
 
-## Our Products
+## produk kami
 Buka sekarang web kami untuk informasi lebih lanjut [Stress Chat Detector](https://stress-chat-detector.vercel.app/) <br>
 
-## Our Teams
+## Tim Kami
 | Name              | University                             | Student ID    | Learning Path      |
 |-------------------|----------------------------------------|---------------|--------------------|
 | Rizaki Akbar      | Universitas Islam Kebangsaan Indonesia | MC436D5Y0920  | Machine Learning   |
