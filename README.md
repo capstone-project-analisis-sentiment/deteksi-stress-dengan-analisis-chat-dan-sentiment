@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="/img/logo_hd_whitebg.png" alt="Criby Logo" height="150">
+    <img src="/img/logo_hd_whitebg.png" height="150">
 </p>
 
 # Stress Chat Detector
