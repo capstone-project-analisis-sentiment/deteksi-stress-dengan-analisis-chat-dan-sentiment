@@ -1,6 +1,6 @@
 # Capstone Project - Stress Detection API
 
-API ini memungkinkan pengguna untuk melakukan deteksi tingkat stres berdasarkan analisis teks menggunakan model LSTM yang telah dilatih.
+API ini memungkinkan pengguna untuk melakukan deteksi tingkat stres berdasarkan analisis teks menggunakan model LSTM yang telah dilatih. Setiap hasil prediksi akan disimpan ke database (SQLite), dan tersedia endpoint untuk melihat serta menghapus riwayat prediksi.
 
 ---
 
@@ -8,25 +8,29 @@ API ini memungkinkan pengguna untuk melakukan deteksi tingkat stres berdasarkan 
 
 ```
 POST https://web-production-8699.up.railway.app/predict
+GET  https://web-production-8699.up.railway.app/logs
+DELETE https://web-production-8699.up.railway.app/logs/{id}
 ```
 
 ---
 
 ## Request
 
-### Method
+### /predict
+
+#### Method
 
 ```
 POST
 ```
 
-### Headers
+#### Headers
 
 | Key          | Value            |
 | ------------ | ---------------- |
 | Content-Type | application/json |
 
-### Body (JSON)
+#### Body (JSON)
 
 ```json
 {
@@ -38,7 +42,7 @@ POST
 
 ## Response
 
-### Contoh Response `200 OK`
+### Contoh Response `200 OK` (POST /predict)
 
 ```json
 {
@@ -47,12 +51,29 @@ POST
 }
 ```
 
-### Keterangan:
+### Contoh Response `GET /logs`
 
-| Field            | Tipe     | Deskripsi                                     |
-| ---------------- | -------- | --------------------------------------------- |
-| `prediction`     | `string` | Hasil klasifikasi: `Positive` atau `Negative` |
-| `stress_percent` | `float`  | Persentase tingkat stres (0 - 100)            |
+```json
+[
+  {
+    "id": 1,
+    "text": "aku capek banget hari ini bener-bener stres karena kerjaan numpuk",
+    "prediction": "Negative",
+    "stress_percent": 94.3,
+    "created_at": "2025-06-13 10:00:00"
+  },
+  // ...
+]
+```
+
+### Contoh Response `DELETE /logs/{id}`
+
+```json
+{
+  "status": "deleted",
+  "id": 1
+}
+```
 
 ---
 
@@ -62,22 +83,7 @@ POST
 
 ```json
 {
-  "status": "error",
-  "message": "No text provided"
-}
-```
-
----
-
-## Contoh Testing via Postman
-
-- Method: `POST`
-- URL: `https://web-production-8699.up.railway.app/predict`
-- Body:
-
-```json
-{
-  "text": "saya stres dengan tugas kuliah"
+  "error": "Text input is required"
 }
 ```
 
@@ -88,3 +94,5 @@ POST
 - Model ini hanya mendukung input dalam Bahasa Indonesia.
 - Hasil berupa `Negative` menandakan kemungkinan stres tinggi.
 - Nilai `stress_percent` tidak mutlak, namun merupakan skor dari model LSTM hasil pembelajaran dataset.
+- Semua hasil prediksi akan disimpan ke database dan dapat diakses melalui endpoint `/logs`.
+- Backend juga tersedia dalam versi Hapi (Node.js) di folder `hapi-backend/` dengan endpoint serupa.
